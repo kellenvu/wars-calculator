@@ -1,0 +1,102 @@
+// Override Bootstrap's variables here if needed (e.g., primary color, padding sizes, etc.)
+
+.app-title {
+  font-size: 3.5rem;
+}
+
+.range-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+
+  .range-slider-label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .slider-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      width: 3rem; // Or whatever width works best for you
+      text-align: center; // To align the numbers in the middle of their space
+    }
+
+    input[type="range"] {
+      flex: 1;
+      flex-grow: 1;
+      margin: 0 8px;
+      cursor: pointer; // Changes the cursor to a hand when hovering
+      -webkit-appearance: none; // Removes default appearance for better custom styling
+      appearance: none;
+      height: 4px; // Makes the track thinner
+      background: #ccc; // Color for the track
+      outline: none; // Removes the default outline
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px; // Makes the thumb bigger
+        height: 20px;
+        background: #007BFF; // The thumb's color, can be changed to any desired color
+        cursor: pointer; // Changes the cursor to a hand when hovering over the thumb
+        border-radius: 50%; // Makes the thumb circular
+
+        &:hover {
+          background: #0056b3; // Slightly darker blue when hovering
+          transform: scale(1.1); // Makes the thumb 10% bigger on hover
+        }
+
+        &:active {
+          background: #003f7f; // Even darker blue when clicking and dragging
+        }
+      }
+
+      &::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        background: #007BFF;
+        cursor: pointer;
+        border-radius: 50%;
+
+        &:hover {
+          background: #0056b3;
+          transform: scale(1.1);
+        }
+
+        &:active {
+          background: #003f7f;
+        }
+      }
+    }
+  }
+}
+
+.dropdown {
+  position: static !important;
+}
+
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  max-width: 50vw;
+  width: auto;
+  text-align: left;
+
+  .dropdown-item {
+    white-space: pre-wrap;
+  }
+}
+
+.graph {
+  border: 2px dashed gray; // Just a temporary style
+  height: 400px;
+}
+
+// Bootstrap import
+@import '~bootstrap/scss/bootstrap.scss';
