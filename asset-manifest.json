@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/wars-calculator/static/css/main.b0dbeb8a.css",
-    "main.js": "/wars-calculator/static/js/main.888ce76f.js",
+    "main.js": "/wars-calculator/static/js/main.4edd4522.js",
     "index.html": "/wars-calculator/index.html",
     "main.b0dbeb8a.css.map": "/wars-calculator/static/css/main.b0dbeb8a.css.map",
-    "main.888ce76f.js.map": "/wars-calculator/static/js/main.888ce76f.js.map"
+    "main.4edd4522.js.map": "/wars-calculator/static/js/main.4edd4522.js.map"
   },
   "entrypoints": [
     "static/css/main.b0dbeb8a.css",
-    "static/js/main.888ce76f.js"
+    "static/js/main.4edd4522.js"
   ]
 }
