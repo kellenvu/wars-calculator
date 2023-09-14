@@ -4,6 +4,7 @@ import Header from './Header';
 import RangeSlider from './RangeSlider';
 import Graph from './Graph';
 import MyDropdown from './Dropdown';
+import MyCheckbox from './Checkbox';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <div className="row">
         <div className="col-md-4">
           <RangeSlider min={0} max={4} name="gpa" labelPrefix="GPA" toFixed={2} step={0.01} />
-          <RangeSlider min={472} max={528} name="mcat" labelPrefix="MCAT Score" />
+          <RangeSlider min={472} max={528} name="mcat" labelPrefix="MCAT" />
           <MyDropdown
             label="Research Experience"
             options={[
@@ -119,34 +120,10 @@ function App() {
               },
             ]}
           />
-          <MyDropdown
-            label="GPA Trend"
-            options={[
-              {
-                level: 'Level 2',
-                description: 'Upward trend'
-              },
-              {
-                level: 'Level 1',
-                description: 'No upward trend'
-              },
-            ]}
-          />
-          <MyDropdown
-            label="Underrepresented in Medicine"
-            options={[
-              {
-                level: 'Yes',
-                description: 'Yes'
-              },
-              {
-                level: 'No',
-                description: 'No'
-              },
-            ]}
-          />
+          <MyCheckbox label="Underrepresented in medicine?" />
+          <MyCheckbox label="Upward GPA trend?" />
         </div>
-        <div className="col-md-8">
+        <div className="col-md-8 ps-5">
           <Graph />
         </div>
       </div>

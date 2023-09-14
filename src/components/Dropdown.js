@@ -4,17 +4,6 @@ import { Dropdown } from 'react-bootstrap';
 function MyDropdown({ label, options }) {
   const [selectedValue, setSelectedValue] = useState('');
 
-  useEffect(() => {
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    if (dropdownMenu) {
-      dropdownMenu.addEventListener('show.bs.dropdown', function () {
-        const rect = dropdownMenu.getBoundingClientRect();
-        dropdownMenu.style.top = `${rect.top + window.scrollY}px`;
-        dropdownMenu.style.left = `${rect.left}px`;
-      });
-    }
-  }, []);
-
   return (
     <div className="d-flex align-items-center justify-content-between mb-4">
       <label className="mb-0 fw-bold">{label}:</label>

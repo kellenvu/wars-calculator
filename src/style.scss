@@ -1,4 +1,6 @@
-// Override Bootstrap's variables here if needed (e.g., primary color, padding sizes, etc.)
+// Override bootstrap variables here
+
+@import '~bootstrap/scss/bootstrap.scss';
 
 .app-title {
   font-size: 3.5rem;
@@ -42,12 +44,11 @@
         appearance: none;
         width: 20px; // Makes the thumb bigger
         height: 20px;
-        background: #007BFF; // The thumb's color, can be changed to any desired color
+        background: $primary; // The thumb's color, can be changed to any desired color
         cursor: pointer; // Changes the cursor to a hand when hovering over the thumb
         border-radius: 50%; // Makes the thumb circular
 
         &:hover {
-          background: #0056b3; // Slightly darker blue when hovering
           transform: scale(1.1); // Makes the thumb 10% bigger on hover
         }
 
@@ -59,12 +60,11 @@
       &::-moz-range-thumb {
         width: 20px;
         height: 20px;
-        background: #007BFF;
+        background: $primary;
         cursor: pointer;
         border-radius: 50%;
 
         &:hover {
-          background: #0056b3;
           transform: scale(1.1);
         }
 
@@ -93,10 +93,37 @@
   }
 }
 
+.custom-checkbox {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.custom-checkbox span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #6c757d;
+  border-radius: 4px;
+  background-color: white;  /* Set initial background color to white */
+  transition: background-color 0.2s, border 0.2s, transform 0.2s;
+}
+
+.custom-checkbox input:checked + span {
+  background-color: $primary;  /* Adjust this to fill the square when checked */
+  transform: scale(0.95);
+  border: 2px solid $primary;
+}
+
+.custom-checkbox:hover span {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+
 .graph {
   border: 2px dashed gray; // Just a temporary style
   height: 400px;
 }
-
-// Bootstrap import
-@import '~bootstrap/scss/bootstrap.scss';
