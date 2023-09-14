@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function RangeSlider({ min, max, name, labelPrefix, toFixed=0, step=1 }) {
-  const [value, setValue] = useState((parseFloat(max) + parseFloat(min)) / 2);
-
+function RangeSlider({ min, max, name, labelPrefix, toFixed=0, step=1, value, onChange }) {
   return (
     <div className="range-slider mb-4">
-      <label htmlFor={name} className="range-slider-label">{labelPrefix}: {value.toFixed(toFixed)}</label>
+      <label htmlFor={name} className="range-slider-label">{labelPrefix}: {parseFloat(value).toFixed(toFixed)}</label>
       <div className="slider-container">
-        <span>{min == 0 ? 0 : min.toFixed(toFixed)}</span>
+        <span>{min == 0 ? 0 : parseFloat(min).toFixed(toFixed)}</span>
         <input
           type="range"
           id={name}
@@ -16,13 +14,12 @@ function RangeSlider({ min, max, name, labelPrefix, toFixed=0, step=1 }) {
           max={max}
           step={step}
           value={value}
-          onChange={(e) => setValue(parseFloat(e.target.value))}
+          onChange={(e) => onChange(parseFloat(e.target.value))}
         />
-        <span>{max.toFixed(toFixed)}</span>
+        <span>{parseFloat(max).toFixed(toFixed)}</span>
       </div>
     </div>
   );
 }
-
 
 export default RangeSlider;

@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function MyCheckbox({ label }) {
-  const [isChecked, setIsChecked] = useState(false);
-
+function MyCheckbox({ label, checked, onChange }) {
   return (
     <div className="d-flex align-items-center justify-content-between mb-4">
       <label className="mb-0 fw-bold">{label}</label>
@@ -10,8 +8,8 @@ function MyCheckbox({ label }) {
         <input
           type="checkbox"
           hidden
-          checked={isChecked}
-          onChange={() => setIsChecked(prev => !prev)}
+          checked={checked}
+          onChange={onChange}
         />
         <span></span>
       </label>
