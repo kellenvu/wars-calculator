@@ -21,11 +21,18 @@ function MyBarChart({ scores, totalSchools, mode }) {
   const yTicks = mode === 'percentage' ? undefined : [0, 10, 20, 30];
 
   return (
-    <div className="text-center mb-4">
-      <p className="mb-3">Your school list should include {totalSchools} schools with the following breakdown:</p>
+    <div className="text-center">
+      <p className="mb-3">Your school list should include <strong>{totalSchools}</strong> schools with the following breakdown:</p>
       <ResponsiveContainer width="100%" height={300}>
-        <BarChart data={data} margin={{ left: 15 }}>
-          <XAxis dataKey="name" tickLine={false} />
+        <BarChart data={data} margin={{ left: 15, bottom: 60 }}>  {/* Increase the bottom margin */}
+          <XAxis
+            dataKey="name"
+            tickLine={false}
+            angle={-45}      // Rotate the labels
+            dy={40}          // Adjust the vertical positioning
+            dx={0}           // Adjust the horizontal positioning
+            interval={0}     // Force all labels to be shown
+          />
           <YAxis
             domain={mode === 'percentage' ? [0, 100] : [0, 30]}
             tickFormatter={yAxisTickFormatter}
