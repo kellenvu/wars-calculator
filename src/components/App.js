@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import '../style.scss';
 import Header from './Header';
-import Graph from './Graph';
+import Visualizer from './Visualizer';
 import Form from './Form';
 import FormContext from './FormContext';
 
 function App() {
-  const [gpa, setGpa] = useState(2.0);
+  const [gpa, setGpa] = useState(3.5);
   const [mcat, setMcat] = useState(500);
   const [researchExp, setResearchExp] = useState(1);
   const [clinicalExp, setClinicalExp] = useState(1);
@@ -32,14 +32,14 @@ function App() {
       underrepresented, setUnderrepresented,
       upwardGpaTrend, setUpwardGpaTrend
     }}>
-      <div className="app-container container">
+      <div className="app-container container mb-4">
         <Header />
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-4 me-5">
             <Form />
           </div>
-          <div className="col-md-8">
-            <Graph />
+          <div className="col-md-7 shadow-panel">
+            <Visualizer />
           </div>
         </div>
       </div>
