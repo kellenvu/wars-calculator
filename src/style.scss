@@ -167,4 +167,8 @@ $primary: #098354;
   padding: 20px; // Some padding to keep the content away from the edges.
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); // Soft shadow for a subtle "lifted" effect.
   min-height: 500px;
+
+  display: flex;        // Use flexbox.
+  flex-direction: column;  // Stack children vertically.
+  justify-content: center; // Center children vertically.
 }
