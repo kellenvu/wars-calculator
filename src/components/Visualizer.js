@@ -79,7 +79,7 @@ function Visualizer() {
     upwardGpaTrend
   } = useContext(FormContext);
 
-  const [mode, setMode] = useState('number');
+  const [mode, setMode] = useState('percentage');
 
   let warsScore = getScoreIndex(gpa, mcat) * 5 + researchExp * 3 + clinicalMultiplier[clinicalExp] + shadowingMultiplier[shadowing] + volunteering * 2 + leadershipTeaching * 2 + (undergradSchool - 1) * 3 + misc * 3 + underrepresented * 7 + upwardGpaTrend * 4;
 
