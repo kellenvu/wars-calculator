@@ -22,7 +22,7 @@ function MyBarChart({ scores, totalSchools, mode }) {
 
   return (
     <div className="text-center mb-4">
-      <p className="mb-3">Your school list should include {totalSchools} schools with the following breakdown:</p>
+      <p className="mb-3">Your school list should include <strong>{totalSchools}</strong> schools with the following breakdown:</p>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data} margin={{ left: 15 }}>
           <XAxis dataKey="name" tickLine={false} />
