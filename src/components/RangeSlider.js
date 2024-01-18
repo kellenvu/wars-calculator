@@ -23,7 +23,7 @@ function RangeSlider({ min, max, name, labelPrefix, toFixed=0, step=1, value, on
     <div className="range-slider mb-4">
       <label htmlFor={name} className="range-slider-label">{labelPrefix}: {parseFloat(sliderValue).toFixed(toFixed)}</label>
       <div className="slider-container">
-        <span>{min == 0 ? 0 : parseFloat(min).toFixed(toFixed)}</span>
+        <span>{min === 0 ? 0 : parseFloat(min).toFixed(toFixed)}</span>
         <input
           type="range"
           id={name}
